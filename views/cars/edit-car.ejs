@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Car</title>
+  </head>
+  <body>
+    <h1>Add a Car</h1>
+    <form action="/cars/<%= car._id  %>?_method=PUT" method="POST">
+      <label for="name">Car Name</label>
+      <input id="name" type="text" name="name" value="<%= car.name  %>"/><br /><br />
+
+      <label for="model">Car Model</label>
+      <input id="model" type="text" name="model" value="<%= car.model  %>"/><br /><br />
+
+      <label for="isElectric">Is Car Electric</label>
+      <input id="isElectric" type="checkbox" name="isElectric" <% if(car.isElectric) { %>checked<% } %> /><br /><br />
+
+      <label>Features:</label><br />
+
+      <label>
+        <input type="checkbox" name="features" value="backup_camera" <% if(car.features.includes('backup_camera')) { %>checked<% } %>/> up
+        Camera </labelBack
+      ><br />
+      <label>
+        <input type="checkbox" name="features" value="sunroof"  <% if(car.features.includes('Sunroof')) { %>checked<% } %> />
+        Sunroof </label
+      ><br />
+      <label>
+        <input type="checkbox" name="features" value="leather" <% if(car.features.includes('leather')) { %>checked<% } %> /> Leather Seats </label
+      ><br /><br />
+
+      <!-- <label for="image">Car Image</label>
+      <input id="image" type="text" name="image" /><br /><br /> -->
+
+      <button type="submit">Add Car</button>
+    </form>
+  </body>
+</html>
